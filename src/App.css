@@ -1,0 +1,33 @@
+#logo-container {
+  position: relative;
+  width: max-content;
+  height: max-content;
+}
+
+.plane-orbit-animation {
+  position: absolute;
+  top: -40px; /* Start slightly above */
+  left: 50%;
+  width: 40px;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.fly-around {
+  animation: orbitAround 5s ease-in-out forwards;
+  opacity: 1;
+}
+
+@keyframes orbitAround {
+  0% {
+    transform: translate(-50%, 0) rotate(0deg) translateX(100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 0) rotate(360deg) translateX(100px) rotate(-360deg);
+    opacity: 0;
+  }
+}
