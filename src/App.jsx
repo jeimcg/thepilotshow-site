@@ -5,6 +5,7 @@ import Links from './pages/Links';
 import Music from './pages/Music';
 import NavbarMain from './components/NavbarMain';
 
+
 function App() {
   const [activePage, setActivePage] = useState('splash');
 

@@ -1,23 +1,55 @@
-import Header from '../components/Header';
+import { useState } from 'react'
+import Header from '../components/Header'
+import FooterQuote from '../components/FooterQuote'
 
 const Home = () => {
+  const [loading, setLoading] = useState(false)
+
+  const handlePayment = async (amount) => {
+    setLoading(true)
+    try {
+      const res = await fetch('http://localhost:4242/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount }),
+      })
+
+      const data = await res.json()
+      if (data.url) {
+        window.location.href = data.url
+      } else {
+        console.error('Checkout failed:', data.error)
+        setLoading(false)
+      }
+    } catch (err) {
+      console.error('Error:', err)
+      setLoading(false)
+    }
+  }
+
   return (
-    <section className="min-h-[calc(100vh-4rem)] flex flex-col items-center text-center pb-20">
+    <section className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center text-center pb-20">
       <Header />
 
       {/* Content */}
-      <div className="mt-10 px-6">
+      <div className="mt-8 px-6">
         <p className="text-zinc-400 text-base max-w-md mb-6">
-          Curated hustle. Collector. Creator. CEO.  
-          Welcome to the official platform of the grind.
+          Support The Show.
         </p>
 
-        <button className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-zinc-200 transition">
-          Explore
+        <button
+          onClick={() => handlePayment(10)} // ← you can change this to 5, 20, etc.
+          className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-zinc-200 transition disabled:opacity-50"
+          disabled={loading}
+        >
+          {loading ? 'Redirecting...' : 'Support with $10'}
         </button>
       </div>
-    </section>
-  );
-};
 
-export default Home;
+      {/* Footer Quote + Signature + Credit */}
+      <FooterQuote />
+    </section>
+  )
+}
+
+export default Home; 
