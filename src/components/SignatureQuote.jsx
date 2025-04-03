@@ -21,7 +21,7 @@ export default function SignatureQuote() {
         Getting Thru it.”
       </p>
       <img
-        src="/dakotas-sig.svg"
+        src="/thepilotshow-site/dakotas-sig.svg"
         alt="Dakota's signature"
         className="h-24 opacity-70 dark:invert"
       />
