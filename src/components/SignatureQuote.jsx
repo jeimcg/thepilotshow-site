@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import dakotaSig from '../assets/dakotas-sig.svg' // ✅ key line
+import dakotaSig from '../assets/dakotas-sig.svg' // 👈 import the SVG
 
 export default function SignatureQuote() {
   const [visible, setVisible] = useState(false)
