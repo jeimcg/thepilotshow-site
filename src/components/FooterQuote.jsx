@@ -1,3 +1,5 @@
+import dakotaSig from '../assets/dakotas-sig.svg' // 👈 import the SVG
+
 export default function FooterQuote() {
     return (
       <div className="mt-20 w-full px-6 text-center text-sm text-zinc-400">
@@ -9,7 +11,7 @@ export default function FooterQuote() {
         {/* Signature */}
         <div className="flex justify-center mb-2">
           <img
-            src="/dakotas-sig.svg"
+            src={dakotaSig}
             alt="Dakota's signature"
             className="h-8 opacity-80 dark:invert"
           />
