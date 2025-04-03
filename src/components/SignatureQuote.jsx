@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import dakotaSig from '../assets/dakotas-sig.svg' // ✅ actual import
 
 export default function SignatureQuote() {
   const [visible, setVisible] = useState(false)
@@ -15,13 +16,13 @@ export default function SignatureQuote() {
       }`}
     >
       <p className="text-sm text-zinc-400 mb-2 leading-snug">
-        “You Gotta Get<br /> 
+        “You Gotta Get<br />
         To It
-        Instead of<br /> 
+        Instead of<br />
         Getting Thru it.”
       </p>
       <img
-        src="./dakotas-sig.svg"
+        src={dakotaSig} // ✅ use imported path
         alt="Dakota's signature"
         className="h-24 opacity-70 dark:invert"
       />
@@ -29,4 +30,3 @@ export default function SignatureQuote() {
   )
 }
 
-  
