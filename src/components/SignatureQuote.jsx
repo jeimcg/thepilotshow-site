@@ -10,17 +10,20 @@ export default function SignatureQuote() {
 
   return (
     <div
-      className={`absolute bottom-8 right-6 text-right max-w-xs transition-opacity duration-1000 ${
+      className={`absolute bottom-8 right-8 text-left max-w-xs transition-opacity duration-1000 ${
         visible ? 'opacity-100' : 'opacity-0'
       }`}
     >
       <p className="text-sm text-zinc-400 mb-2 leading-snug">
-        “You Gotta Get To It, Instead of Getting Thru It.”
+        “You Gotta Get<br /> 
+        To It
+        Instead of<br /> 
+        Getting Thru it.”
       </p>
       <img
         src="/dakotas-sig.svg"
         alt="Dakota's signature"
-        className="h-10 opacity-80 dark:invert"
+        className="h-24 opacity-70 dark:invert"
       />
     </div>
   )
