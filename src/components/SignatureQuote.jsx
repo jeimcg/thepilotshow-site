@@ -16,9 +16,7 @@ export default function SignatureQuote() {
       }`}
     >
       <p className="text-sm text-zinc-400 mb-2 leading-snug">
-        “You Gotta Get<br />
-        To It Instead of<br />
-        Getting Thru it.”
+        “Where the light is, is where you should be.”
       </p>
       <img
         src={dakotaSig}
