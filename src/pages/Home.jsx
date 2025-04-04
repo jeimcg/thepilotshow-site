@@ -34,15 +34,15 @@ const Home = () => {
       {/* Content */}
       <div className="mt-8 px-6">
         <p className="text-zinc-400 text-base max-w-md mb-6">
-          Support The Show.
+          Support The Pilot.
         </p>
 
         <button
-          onClick={() => handlePayment(10)} // ← you can change this to 5, 20, etc.
+          onClick={() => handlePayment(5)} // ← you can change this to 5, 20, etc.
           className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-zinc-200 transition disabled:opacity-50"
           disabled={loading}
         >
-          {loading ? 'Redirecting...' : 'Support with $10'}
+          {loading ? 'Redirecting...' : 'Support with $5'}
         </button>
       </div>
 

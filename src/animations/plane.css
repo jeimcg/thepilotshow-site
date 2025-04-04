@@ -16,13 +16,13 @@
   }
   
   .fly-around {
-    animation: orbitAround 5s ease-in-out forwards;
+    animation: orbitAround 8s ease-in-out forwards;
     opacity: 1;
   }
   
   @keyframes orbitAround {
     0% {
-      transform: translate(-50%, 0) rotate(0deg) translateX(100px) rotate(0deg);
+      transform: translate(-50%, 0) rotate(30deg) translateX(100px) rotate(0deg);
       opacity: 0;
     }
     10% {

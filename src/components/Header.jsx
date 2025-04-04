@@ -24,7 +24,7 @@ const Header = () => {
     <header className="min-h-[calc(100vh-4rem)] px-6 pt-10 pb-20 text-center flex flex-col items-center justify-center relative">
       <div className="relative inline-block" id="logo-container">
         <h1 className="text-4xl font-bold text-white tracking-tight mb-2 z-10 relative">
-          The Pilot Show™
+          The Pilot Show
         </h1>
         <img
           src={planeImg}
