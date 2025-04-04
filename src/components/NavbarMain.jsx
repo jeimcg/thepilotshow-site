@@ -1,26 +1,27 @@
 // src/components/NavbarMain.jsx
-import {
-  Home,
-  Link,
-  Library,
-} from 'lucide-react';
+import { Home, Link, Library } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const NavbarMain = ({ activePage, setActivePage }) => {
+const NavbarMain = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const tabs = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'links', label: 'Links', icon: Link },
-    { id: 'music', label: 'Music', icon: Library },
+    { id: '/home', label: 'Home', icon: Home },
+    { id: '/links', label: 'Links', icon: Link },
+    { id: '/music', label: 'Music', icon: Library },
   ];
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 bg-zinc-900/90 backdrop-blur-sm border-t border-zinc-800 shadow-inner rounded-t-xl">
       <div className="mx-auto flex justify-around py-3 px-4">
         {tabs.map(({ id, label, icon: Icon }) => {
-          const isActive = activePage === id;
+          const isActive = location.pathname === id;
+
           return (
             <button
               key={id}
-              onClick={() => setActivePage(id)}
+              onClick={() => navigate(id)}
               className={`flex flex-col items-center justify-center gap-1 px-4 py-2 rounded-md transition-all duration-150 ${
                 isActive
                   ? 'text-white scale-105'

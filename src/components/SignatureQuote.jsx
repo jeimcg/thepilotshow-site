@@ -21,7 +21,7 @@ export default function SignatureQuote() {
       <img
         src={dakotaSig}
         alt="Dakota's signature"
-        className="h-24 opacity-70 dark:invert"
+        className="h-24 opacity-70 dark:invert ml-24"
       />
     </div>
   )
