@@ -1,24 +1,23 @@
-import { useEffect } from "react";
-import "../animations/plane.css";
-import planeImg from "/plane.svg"; // or adjust path if needed
+import { useEffect } from 'react'
+import '../animations/plane.css'
+import planeImg from '/plane.svg'
 
 const Header = () => {
   useEffect(() => {
     const flyPlane = () => {
-      const plane = document.getElementById("plane");
+      const plane = document.getElementById('plane')
       if (plane) {
-        plane.classList.add("fly-around");
+        plane.classList.add('fly-straight')
         setTimeout(() => {
-          plane.classList.remove("fly-around");
-        }, 5000); // match animation duration
+          plane.classList.remove('fly-straight')
+        }, 2500) // match animation duration
       }
-    };
+    }
 
-    flyPlane(); // run on mount
-    const interval = setInterval(flyPlane, 69000); // repeat every 69s
-
-    return () => clearInterval(interval); // cleanup
-  }, []);
+    flyPlane() // initial run
+    const interval = setInterval(flyPlane, 6000) // repeat every 60s
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <header className="min-h-[calc(100vh-4rem)] px-6 pt-10 pb-20 text-center flex flex-col items-center justify-center relative">
@@ -30,11 +29,11 @@ const Header = () => {
           src={planeImg}
           alt="Plane"
           id="plane"
-          className="plane-orbit-animation"
+          className="plane-flyby"
         />
       </div>
     </header>
-  );
-};
+  )
+}
 
 export default Header;

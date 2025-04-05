@@ -5,8 +5,15 @@ const Splash = () => {
   const navigate = useNavigate()
 
   const handleEnter = () => {
-    sessionStorage.setItem('splashShown', 'true')
-    navigate('/home')
+    // Play click sound
+    new Audio('./sfx/whooshv2.mp3').play()
+
+    // Slight delay before takeoff sound + navigation
+    setTimeout(() => {
+      new Audio('./sfx/whooshv2.mp3').play()
+      sessionStorage.setItem('splashShown', 'true')
+      navigate('/home')
+    }, 50) // delay in ms
   }
 
   return (
@@ -23,4 +30,3 @@ const Splash = () => {
 }
 
 export default Splash;
-

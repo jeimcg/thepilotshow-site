@@ -3,18 +3,39 @@ import MusicCard from '../components/MusicCard';
 const Music = () => {
   const tracks = [
     {
-      title: 'Track One',
+      title: 'Joanna (Ft. Kole)',
       cover: '/images/track1.jpg', // or use a URL for now
-      link: 'https://soundcloud.com/yourtrack',
+      link: 'https://on.soundcloud.com/zgZKJQWj8Evx4fdg8',
       platform: 'SoundCloud',
-      description: 'deez ballz.',
+      description: '',
     },
     {
-      title: 'EP name',
+      title: 'Love Ft. (Rock Ali)',
+      cover: '/images/track1.jpg', // or use a URL for now
+      link: 'https://on.soundcloud.com/fzVwebrQZWdSL41N7',
+      platform: 'SoundCloud',
+      description: '',
+    },
+    {
+      title: 'Purple Rain Freestyle',
+      cover: '/images/track1.jpg', // or use a URL for now
+      link: 'https://on.soundcloud.com/Wk3gqS6yyVoWo2vc6',
+      platform: 'SoundCloud',
+      description: '',
+    },
+    {
+      title: 'Mixtape 3: 2016 The Summer Mixtape',
       cover: '/images/epcover.jpg',
-      link: 'https://open.spotify.com/album/youralbum',
-      platform: 'Spotify',
-      description: 'deez nutz',
+      link: 'https://on.soundcloud.com/yvWpTQE8ZFe3YuD77',
+      platform: 'SoundCloud',
+      description: '',
+    },
+    {
+      title: 'FTL Tape 2017-2018',
+      cover: '/images/epcover.jpg',
+      link: 'https://on.soundcloud.com/4vX1Y361ztydA5LL7',
+      platform: 'SoundCloud',
+      description: '',
     },
     // Add more tracks here
   ];
@@ -25,7 +46,7 @@ const Music = () => {
         Releases & Tracks
       </h2>
 
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
         {tracks.map((track) => (
           <MusicCard key={track.title} {...track} />
         ))}

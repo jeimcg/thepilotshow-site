@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import FooterQuote from '../components/FooterQuote'
-import PageWrapper from '../components/PageWrapper.jsx'
+import PageWrapper from '../components/PageWrapper'
+import '../animations/plane.css' // Make sure this is the path to your CSS
 
 const Home = () => {
   const [loading, setLoading] = useState(false)
+  const [showPlane, setShowPlane] = useState(true) // trigger animation once
 
   const handlePayment = async (amount) => {
     setLoading(true)
@@ -28,31 +30,46 @@ const Home = () => {
     }
   }
 
+  useEffect(() => {
+    const timer = setTimeout(() => setShowPlane(false), 8000) // hide after 8s
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <section className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center text-center pb-20">
       <PageWrapper>
+        {/* Plane animation overlay */}
+        {showPlane && (
+          <div id="logo-container" className="relative mb-4">
+            <img
+              src="/plane.svg"
+              alt="Flying Plane"
+              className="plane-flythrough fly-across"
+            />
+          </div>
+        )}
+
         <Header />
 
-      {/* Content */}
-      <div className="mt-8 px-6">
-        <p className="text-zinc-400 text-base max-w-md mb-6">
-          Support The Pilot.
-        </p>
+        {/* Content */}
+        <div className="mt-8 px-6">
+          <p className="text-zinc-400 text-base max-w-md mb-6">
+            Support The Pilot.
+          </p>
 
-        <button
-          onClick={() => handlePayment(5)} // ← you can change this to 5, 20, etc.
-          className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-zinc-200 transition disabled:opacity-50"
-          disabled={loading}
-        >
-          {loading ? 'Redirecting...' : 'Support with $5'}
-        </button>
-      </div>
+          <button
+            onClick={() => handlePayment(5)}
+            className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-zinc-200 transition disabled:opacity-50"
+            disabled={loading}
+          >
+            {loading ? 'Redirecting...' : 'Support with $5'}
+          </button>
+        </div>
 
-      {/* Footer Quote + Signature + Credit */}
-      <FooterQuote />
-    </PageWrapper >
+        <FooterQuote />
+      </PageWrapper>
     </section>
   )
 }
 
-export default Home; 
+export default Home;

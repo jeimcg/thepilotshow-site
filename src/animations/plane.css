@@ -1,36 +1,42 @@
+/* Make sure the container is positioned correctly */
 #logo-container {
-    position: relative;
-    width: max-content;
-    height: max-content;
-  }
-  
-  .plane-orbit-animation {
-    position: absolute;
-    top: -40px;
-    left: 50%;
-    width: 40px;
-    transform: translateX(-50%);
+  position: relative;
+  display: inline-block;
+  width: max-content;
+  height: max-content;
+}
+
+/* Plane setup */
+.plane-flyby {
+  position: absolute;
+  top: 50%;
+  left: -60px; /* Start slightly off-screen */
+  width: 40px;
+  transform: translateY(-50%) rotate(45deg);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Animation class */
+.fly-straight {
+  animation: flyStraight 2.5s ease-out forwards;
+  opacity: 1;
+}
+
+@keyframes flyStraight {
+  0% {
+    left: -60px;
     opacity: 0;
-    pointer-events: none;
-    z-index: 20;
   }
-  
-  .fly-around {
-    animation: orbitAround 8s ease-in-out forwards;
+  10% {
     opacity: 1;
   }
-  
-  @keyframes orbitAround {
-    0% {
-      transform: translate(-50%, 0) rotate(30deg) translateX(100px) rotate(0deg);
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    100% {
-      transform: translate(-50%, 0) rotate(360deg) translateX(100px) rotate(-360deg);
-      opacity: 0;
-    }
+  90% {
+    opacity: 1;
   }
-  
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
