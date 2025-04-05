@@ -9,11 +9,11 @@ export default function FooterQuote() {
       </p>
 
       {/* Signature */}
-      <div className="flex justify-center mb-4">
+      <div className="flex justify-center mb-2">
         <img
           src={dakotaSig}
           alt="Dakota's signature"
-          className="h-10 opacity-80 dark:invert"
+          className="h-14 opacity-80 dark:invert"
         />
       </div>
 
