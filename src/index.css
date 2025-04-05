@@ -12,6 +12,7 @@ html, body, #root {
   --color-foreground: #000000;
   --color-primary: #0066cc;
   --color-muted: #e5e5e5;
+  background-color: black;
 }
 
 :root {

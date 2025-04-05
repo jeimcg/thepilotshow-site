@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from '../components/Header'
 import FooterQuote from '../components/FooterQuote'
+import PageWrapper from '../components/PageWrapper.jsx'
 
 const Home = () => {
   const [loading, setLoading] = useState(false)
@@ -29,7 +30,8 @@ const Home = () => {
 
   return (
     <section className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center text-center pb-20">
-      <Header />
+      <PageWrapper>
+        <Header />
 
       {/* Content */}
       <div className="mt-8 px-6">
@@ -48,6 +50,7 @@ const Home = () => {
 
       {/* Footer Quote + Signature + Credit */}
       <FooterQuote />
+    </PageWrapper >
     </section>
   )
 }

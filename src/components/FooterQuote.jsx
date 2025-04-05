@@ -2,7 +2,7 @@ import dakotaSig from '../assets/dakotas-sig.svg'
 
 export default function FooterQuote() {
   return (
-    <div className="mt-20 w-full px-6 text-center text-sm text-zinc-400">
+    <div className="mt-20 w-full px-6 text-center text-lg text-zinc-400">
       {/* Quote */}
       <p className="italic mb-2">
         “You Gotta Get To It, Instead of Getting Thru It.”
@@ -13,7 +13,7 @@ export default function FooterQuote() {
         <img
           src={dakotaSig}
           alt="Dakota's signature"
-          className="h-8 opacity-80 dark:invert"
+          className="h-10 opacity-80 dark:invert"
         />
       </div>
 
