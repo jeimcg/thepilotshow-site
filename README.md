@@ -1,12 +1,61 @@
-# React + Vite
+# The Pilot Show — Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Demo:** [https://thepilotshow-site.netlify.app/](https://thepilotshow-site.netlify.app/)  
+**Tech Stack:** React + Tailwind CSS + Vite + Stripe + Netlify
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+_The Pilot Show_ is a sleek, mobile-first portfolio website created for a multi-talented creative client. It acts as a central hub to showcase music, visual content, external platforms, and brand identity — all within a responsive, minimal, and animated interface.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Features
+
+### Splash Landing Animation
+- Interactive “Enter” button with audio feedback
+- Plane animation fly-through effect
+- Animation only plays once per session
+
+### Mobile-Optimized Navigation
+- Bottom nav bar built with `react-router-dom`
+- Smooth page transitions
+- Icons powered by Lucide
+
+### Runway-Inspired Home Page
+- Animated runway stripe with glowing dashes and threshold bars
+- Plane fly-through synced with branding
+- Stripe donation button to support the creator
+
+### Music Page with Embedded Players
+- Responsive music grid
+- Supports both songs and playlists
+- SoundCloud embeds allow users to listen in-page
+
+### Photo Gallery
+- Expanding image grid built for portfolios
+- Responsive layout with Tailwind utility classes
+
+### About Me
+- Personal bio section
+- Embedded signature graphic
+- Footer credit for developer
+
+---
+
+## Tech Stack
+
+| Tool         | Purpose                              |
+|--------------|---------------------------------------|
+| React        | Frontend framework                    |
+| Tailwind CSS | Styling via utility classes           |
+| Vite         | Fast dev server & optimized builds    |
+| Stripe       | Donation support via checkout session |
+| Netlify      | CI/CD + hosting                       |
+| React Router | Routing between pages                 |
+
+---
+
+## Project Structure
+
