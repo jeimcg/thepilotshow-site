@@ -6,11 +6,11 @@ const Splash = () => {
 
   const handleEnter = () => {
     // Play click sound
-    new Audio('./sfx/whooshv2.mp3').play()
+    new Audio('./sfx/whooshv3.mp3').play()
 
     // Slight delay before takeoff sound + navigation
     setTimeout(() => {
-      new Audio('./sfx/whooshv2.mp3').play()
+      new Audio('./sfx/whooshv3.mp3').play()
       sessionStorage.setItem('splashShown', 'true')
       navigate('/home')
     }, 50) // delay in ms

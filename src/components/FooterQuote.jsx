@@ -18,7 +18,7 @@ export default function FooterQuote() {
       </div>
 
       {/* Developer Credit */}
-      <p className="text-xs">
+      <p className="mr-4 text-xs">
         Website by{' '}
         <a
           href="https://github.com/jeimcg"

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Header from '../components/Header'
-import RunwayStripe from '../components/RunwayStripe'
+import RunWayStripe from '../components/RunWayStripe'
 import FooterQuote from '../components/FooterQuote'
 import PageWrapper from '../components/PageWrapper'
 import '../animations/plane.css'
@@ -39,7 +39,7 @@ const Home = () => {
   return (
     <section className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center text-center pb-20 overflow-hidden">
       {/* 🔥 Runway Stripe */}
-      <RunwayStripe />
+      <RunWayStripe />
 
       <PageWrapper>
         {/* Plane animation overlay */}
