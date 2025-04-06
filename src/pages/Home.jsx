@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 import Header from '../components/Header'
+import RunwayStripe from '../components/RunwayStripe'
 import FooterQuote from '../components/FooterQuote'
 import PageWrapper from '../components/PageWrapper'
-import '../animations/plane.css' // Make sure this is the path to your CSS
+import '../animations/plane.css'
 
 const Home = () => {
   const [loading, setLoading] = useState(false)
-  const [showPlane, setShowPlane] = useState(true) // trigger animation once
+  const [showPlane, setShowPlane] = useState(true)
 
   const handlePayment = async (amount) => {
     setLoading(true)
@@ -31,12 +32,15 @@ const Home = () => {
   }
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowPlane(false), 8000) // hide after 8s
+    const timer = setTimeout(() => setShowPlane(false), 8000)
     return () => clearTimeout(timer)
   }, [])
 
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center text-center pb-20">
+    <section className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center text-center pb-20 overflow-hidden">
+      {/* 🔥 Runway Stripe */}
+      <RunwayStripe />
+
       <PageWrapper>
         {/* Plane animation overlay */}
         {showPlane && (
