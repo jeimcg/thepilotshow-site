@@ -42,16 +42,14 @@ const Home = () => {
       <RunwayStripe />
 
       <PageWrapper>
-        {/* Plane animation overlay */}
-        {showPlane && (
-          <div id="logo-container" className="relative mb-4">
-            <img
-              src="/plane.svg"
-              alt="Flying Plane"
-              className="plane-flythrough fly-across"
-            />
-          </div>
-        )}
+        {/* Plane animation overlay container (always rendered) */}
+        <div id="logo-container" className="relative mb-4 h-[60px] w-[60px]">
+          <img
+            src="/plane.svg"
+            alt="Flying Plane"
+            className={`plane-flythrough ${showPlane ? 'fly-across' : 'opacity-0'}`}
+          />
+        </div>
 
         <Header />
 
@@ -62,12 +60,14 @@ const Home = () => {
           </p>
 
           <button
-            onClick={() => handlePayment(5)}
-            className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-zinc-200 transition disabled:opacity-50"
-            disabled={loading}
-          >
-            {loading ? 'Redirecting...' : 'Support with $5'}
-          </button>
+          onClick={() => {
+            navigator.clipboard.writeText('@pilotboyd')
+            alert('Chime handle copied! Paste it into your app to donate.')
+          }}
+          className="text-[#0837F5] border-2 border-white bg-transparent px-6 py-3 rounded-full hover:bg-white/10 hover:shadow-blue-400/30 transition"
+        >
+          Donate with Chime
+        </button>
         </div>
 
         <FooterQuote />
@@ -76,4 +76,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default Home
