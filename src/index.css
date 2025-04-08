@@ -35,3 +35,7 @@ html, body, #root {
   -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
+.filter-blue{
+  filter: invert(13%) sepia(93%) saturate(4164%) hue-rotate(232deg) brightness(106%) contrast(113%);
+}
+

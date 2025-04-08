@@ -13,7 +13,7 @@ export default function FooterQuote() {
         <img
           src={dakotaSig}
           alt="Dakota's signature"
-          className="h-14 opacity-80 dark:invert"
+          className="h-14 opacity-80"
         />
       </div>
 

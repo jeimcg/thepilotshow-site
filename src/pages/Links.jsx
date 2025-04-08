@@ -67,7 +67,15 @@ const Links = () => {
       <div className="w-full max-w-xs space-y-3">
         <p className="uppercase text-xs tracking-widest text-zinc-400">Social</p>
         <a
-          href="https://www.instagram.com/itsbigoctoberbabyuknodat/"
+          href="https://www.bigo.tv/user/949871167"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full bg-gradient-to-r from-blue-400 to-white text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:brightness-110 hover:shadow-lg transition duration-150 ease-in-out px-6 py-3"
+        >
+          BIGO (@PilotBoyD)
+        </a>
+        <a
+          href="https://www.instagram.com/itsbigoctoberbabyuknodat"
           target="_blank"
           rel="noopener noreferrer"
           className="block w-full bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:brightness-110 hover:shadow-lg transition duration-150 ease-in-out px-6 py-3"
@@ -83,7 +91,7 @@ const Links = () => {
           Instagram (@__theviews____)
         </a>
         <a
-          href="https://www.instagram.com/___ftl_/"
+          href="https://www.instagram.com/___ftl_"
           target="_blank"
           rel="noopener noreferrer"
           className="block w-full bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:brightness-110 hover:shadow-lg transition duration-150 ease-in-out px-6 py-3"

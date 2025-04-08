@@ -37,7 +37,7 @@ const MusicCard = ({ title, cover, link, platform, description }) => {
             title={`SoundCloud Player - ${title}`}
             src={`https://w.soundcloud.com/player/?url=${encodeURIComponent(
               link
-            )}&color=%23ffffff&auto_play=false&show_user=false&hide_related=true&show_comments=false`}
+            )}&color=%230837F5&auto_play=false&show_user=false&hide_related=true&show_comments=false`}
             className="rounded"
           ></iframe>
         </div>
