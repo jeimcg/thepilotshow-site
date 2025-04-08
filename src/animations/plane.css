@@ -12,7 +12,7 @@
   top: 50%;
   left: -60px; /* Start slightly off-screen */
   width: 20px;
-  transform: translateY(-50%) rotate(0deg);
+  transform: translateY(-50%) rotate(45deg);
   opacity: 0;
   pointer-events: none;
   z-index: 20;
