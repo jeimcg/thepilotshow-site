@@ -5,7 +5,7 @@ export default function FooterQuote() {
     <div className="mt-20 w-full px-6 text-center text-lg text-zinc-400">
       {/* Quote */}
       <p className="italic mb-2">
-        “You Gotta Get To It, Instead of Getting Thru It.”
+        “You Gotta Get To It, Instead of Going Thru It.”
       </p>
 
       {/* Signature */}

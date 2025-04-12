@@ -5,7 +5,7 @@ import Splash from './pages/Splash'
 import Home from './pages/Home'
 import Links from './pages/Links'
 import Music from './pages/Music'
-import Photos from './pages/Photos'
+import Photos from './pages/Photos/'
 import AboutMe from './pages/AboutMe'
 // components
 import NavbarMain from './components/NavbarMain'
