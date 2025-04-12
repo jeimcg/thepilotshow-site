@@ -7,6 +7,7 @@ import Links from './pages/Links'
 import Music from './pages/Music'
 import Photos from './pages/Photos/'
 import AboutMe from './pages/AboutMe'
+import Dashboard from './pages/Dashboard'
 // components
 import NavbarMain from './components/NavbarMain'
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/music" element={<Music />} />
         <Route path="/photos" element={<Photos />} />
         <Route path="/aboutme" element={<AboutMe />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
 
       {showNavbar && <NavbarMain />}
