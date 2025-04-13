@@ -8,6 +8,9 @@ import Music from './pages/Music'
 import Photos from './pages/Photos/'
 import AboutMe from './pages/AboutMe'
 import Dashboard from './pages/Dashboard'
+// auth pages
+import Login from './pages/Login'
+import Signup from './pages/Signup'
 // components
 import NavbarMain from './components/NavbarMain'
 
@@ -27,6 +30,8 @@ function App() {
         <Route path="/photos" element={<Photos />} />
         <Route path="/aboutme" element={<AboutMe />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
 
       {showNavbar && <NavbarMain />}

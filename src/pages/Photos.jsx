@@ -1,6 +1,7 @@
+// src/pages/Photos.jsx
 import { useState, useEffect } from 'react'
 import { collection, getDocs } from 'firebase/firestore'
-import { db } from '../firebase' // ✅ Make sure this path is correct
+import { db } from '../firebase'
 
 const Photos = () => {
   const [mediaItems, setMediaItems] = useState([])
@@ -8,19 +9,19 @@ const Photos = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const fetchPhotos = async () => {
+    const fetchMedia = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, 'photos'))
-        const items = querySnapshot.docs.map((doc) => doc.data())
-        setMediaItems(items)
+        const snapshot = await getDocs(collection(db, 'photos'))
+        const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+        setMediaItems(data)
       } catch (err) {
-        console.error('Error fetching photos:', err)
+        console.error('Error fetching media:', err)
       } finally {
         setLoading(false)
       }
     }
 
-    fetchPhotos()
+    fetchMedia()
   }, [])
 
   return (
@@ -28,19 +29,19 @@ const Photos = () => {
       <h2 className="text-center text-2xl font-bold mt-8">Photo/Vids</h2>
 
       {loading ? (
-        <p className="text-center mt-4">Loading media...</p>
+        <p className="text-center mt-4 text-zinc-400">Loading media...</p>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4">
-          {mediaItems.map((item, i) => (
+          {mediaItems.map((item) => (
             <div
-              key={i}
+              key={item.id}
               className="relative rounded-md overflow-hidden shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300"
               onClick={() => setSelected(item)}
             >
               {item.type === 'image' ? (
                 <img
                   src={item.url}
-                  alt={item.alt}
+                  alt={item.alt || 'Uploaded image'}
                   className="object-cover w-full h-48"
                 />
               ) : (
