@@ -1,0 +1,22 @@
+// src/components/Pagination.jsx
+const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+    return (
+      <div className="flex justify-center mt-6 space-x-2">
+        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+          <button
+            key={page}
+            onClick={() => onPageChange(page)}
+            className={`px-3 py-1 rounded-md border text-sm transition-colors ${
+              page === currentPage
+                ? 'bg-[#0837F5] text-white border-[#0837F5]'
+                : 'bg-zinc-800 text-zinc-300 border-zinc-600 hover:bg-zinc-700'
+            }`}
+          >
+            {page}
+          </button>
+        ))}
+      </div>
+    )
+  }
+  
+  export default Pagination;  

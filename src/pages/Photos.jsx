@@ -1,37 +1,82 @@
-// src/pages/Photos.jsx
 import { useState, useEffect } from 'react'
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDocs, query, orderBy, limit, startAfter } from 'firebase/firestore'
 import { db } from '../firebase'
+import toast, { Toaster } from 'react-hot-toast'
+
+const ITEMS_PER_PAGE = 8
 
 const Photos = () => {
   const [mediaItems, setMediaItems] = useState([])
+  const [lastVisible, setLastVisible] = useState(null)
+  const [firstVisible, setFirstVisible] = useState(null)
+  const [pageStack, setPageStack] = useState([])
   const [selected, setSelected] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    const fetchMedia = async () => {
-      try {
-        const snapshot = await getDocs(collection(db, 'photos'))
-        const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
-        setMediaItems(data)
-      } catch (err) {
-        console.error('Error fetching media:', err)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchMedia()
+    fetchPage()
   }, [])
 
+  const fetchPage = async (direction = 'next') => {
+    setLoading(true)
+    let q
+
+    if (direction === 'prev') {
+      const prevStack = [...pageStack]
+      const popped = prevStack.pop()
+      setPageStack(prevStack)
+      q = query(
+        collection(db, 'photos'),
+        orderBy('timestamp', 'desc'),
+        limit(ITEMS_PER_PAGE),
+        startAfter(popped)
+      )
+    } else {
+      q = query(
+        collection(db, 'photos'),
+        orderBy('timestamp', 'desc'),
+        ...(lastVisible ? [startAfter(lastVisible)] : []),
+        limit(ITEMS_PER_PAGE)
+      )
+    }
+
+    try {
+      const querySnapshot = await getDocs(q)
+      const items = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+
+      if (items.length === 0 && direction === 'next') {
+        toast('✅ All photos loaded')
+      }
+
+      if (direction === 'next' && lastVisible) {
+        setPageStack([...pageStack, lastVisible])
+      }
+
+      setMediaItems(items)
+      setFirstVisible(items[0])
+      setLastVisible(querySnapshot.docs[querySnapshot.docs.length - 1])
+    } catch (err) {
+      console.error('Fetch error:', err)
+      toast.error('Failed to load media')
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
-    <section className="min-h-screen bg-black text-white relative">
+    <section className="min-h-screen bg-black text-white relative px-4">
+      <Toaster position="bottom-center" toastOptions={{ style: { background: '#333', color: '#fff' } }} />
+
       <h2 className="text-center text-2xl font-bold mt-8">Photo/Vids</h2>
 
       {loading ? (
-        <p className="text-center mt-4 text-zinc-400">Loading media...</p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-6 animate-pulse">
+          {[...Array(ITEMS_PER_PAGE)].map((_, i) => (
+            <div key={i} className="w-full h-48 bg-zinc-700 rounded" />
+          ))}
+        </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 py-6">
           {mediaItems.map((item) => (
             <div
               key={item.id}
@@ -39,19 +84,9 @@ const Photos = () => {
               onClick={() => setSelected(item)}
             >
               {item.type === 'image' ? (
-                <img
-                  src={item.url}
-                  alt={item.alt || 'Uploaded image'}
-                  className="object-cover w-full h-48"
-                />
+                <img src={item.url} alt={item.alt} className="object-cover w-full h-48" />
               ) : (
-                <video
-                  src={item.url}
-                  className="object-cover w-full h-48"
-                  muted
-                  autoPlay
-                  loop
-                />
+                <video src={item.url} className="object-cover w-full h-48" muted autoPlay loop />
               )}
               <div className="absolute top-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
                 {item.type === 'image' ? '📷 Photo' : '🎥 Video'}
@@ -67,21 +102,28 @@ const Photos = () => {
           onClick={() => setSelected(null)}
         >
           {selected.type === 'image' ? (
-            <img
-              src={selected.url}
-              alt={selected.alt}
-              className="max-w-full max-h-full rounded shadow-lg"
-            />
+            <img src={selected.url} alt={selected.alt} className="max-w-full max-h-full rounded shadow-lg" />
           ) : (
-            <video
-              src={selected.url}
-              controls
-              autoPlay
-              className="max-w-full max-h-full rounded shadow-lg"
-            />
+            <video src={selected.url} controls autoPlay className="max-w-full max-h-full rounded shadow-lg" />
           )}
         </div>
       )}
+
+      <div className="flex justify-center items-center gap-4 mt-4 mb-10">
+        <button
+          onClick={() => fetchPage('prev')}
+          disabled={pageStack.length === 0}
+          className="bg-zinc-800 hover:bg-zinc-700 text-white text-sm px-4 py-2 rounded disabled:opacity-40"
+        >
+          ⬅ Prev
+        </button>
+        <button
+          onClick={() => fetchPage('next')}
+          className="bg-zinc-800 hover:bg-zinc-700 text-white text-sm px-4 py-2 rounded"
+        >
+          Next ➡
+        </button>
+      </div>
     </section>
   )
 }
