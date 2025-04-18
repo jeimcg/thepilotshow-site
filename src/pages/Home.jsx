@@ -42,7 +42,7 @@ const Home = () => {
             }}
             className="btn-chime"
           >
-            Give Love with Chime
+            Give Love with $Chime
           </button>
         </div>
 
