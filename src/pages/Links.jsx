@@ -21,7 +21,7 @@ const AccordionSection = ({ title, children, isOpen, onClick }) => (
 )
 
 const Links = () => {
-  const [openSection, setOpenSection] = useState('music')
+  const [openSection, setOpenSection] = useState('')
 
   const toggleSection = (section) => {
     setOpenSection((prev) => (prev === section ? null : section))
@@ -47,7 +47,7 @@ const Links = () => {
             YouTube Channel
           </a>
           <a
-            href="https://soundcloud.com/pilotboyd"
+            href="https://soundcloud.com/dakota-homealone"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full bg-orange-500 text-white font-medium text-sm uppercase rounded shadow hover:bg-orange-600 transition px-6 py-3"
