@@ -1,14 +1,17 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
-import './index.css'
 import App from './App.jsx'
-import 'tw-elements';
+import './index.css'
+import 'tw-elements'
+import { DarkModeProvider } from './components/DarkLightToggle'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-    <App />
+      <DarkModeProvider>
+        <App />
+      </DarkModeProvider>
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )

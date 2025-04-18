@@ -1,20 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './utilities.css';
 
 html, body, #root {
-  
+  @apply font-body;
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: system-ui, sans-serif;
-  --color-background: #ffffff;
-  --color-foreground: #000000;
-  --color-primary: #0066cc;
-  --color-muted: #e5e5e5;
-  background-color: black;
+  background-color: var(--color-background);
 }
 
+/* Root color definitions */
 :root {
   --color-background: #ffffff;
   --color-foreground: #000000;
@@ -29,13 +26,45 @@ html, body, #root {
   --color-muted: #1e1e1e;
 }
 
+/* Global heading styles with improved spacing and sizing */
+h1 {
+  @apply font-heading text-5xl tracking-wide leading-tight text-foreground;
+}
+h2 {
+  @apply font-heading text-4xl tracking-wide leading-snug text-foreground;
+}
+h3 {
+  @apply font-heading text-3xl tracking-normal leading-snug text-foreground;
+}
+h4 {
+  @apply font-heading text-2xl tracking-normal leading-normal text-foreground;
+}
+h5 {
+  @apply font-heading text-xl tracking-tight leading-normal text-foreground;
+}
+h6 {
+  @apply font-heading text-lg tracking-tight leading-snug text-foreground;
+}
+
+/* Body text enhancements */
+body, p {
+  @apply font-body text-base leading-relaxed tracking-normal text-foreground;
+}
+
+strong {
+  @apply font-semibold;
+}
+
+small {
+  @apply text-sm text-muted;
+}
+
 /* fade out */
 .runway-stripe-mask {
-  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 80%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
-.filter-blue{
+.filter-blue {
   filter: invert(13%) sepia(93%) saturate(4164%) hue-rotate(232deg) brightness(106%) contrast(113%);
 }
-

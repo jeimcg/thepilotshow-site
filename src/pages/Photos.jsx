@@ -8,7 +8,6 @@ const ITEMS_PER_PAGE = 8
 const Photos = () => {
   const [mediaItems, setMediaItems] = useState([])
   const [lastVisible, setLastVisible] = useState(null)
-  const [firstVisible, setFirstVisible] = useState(null)
   const [pageStack, setPageStack] = useState([])
   const [selected, setSelected] = useState(null)
   const [loading, setLoading] = useState(false)
@@ -35,46 +34,35 @@ const Photos = () => {
       q = query(
         collection(db, 'photos'),
         orderBy('timestamp', 'desc'),
-        ...(lastVisible ? [startAfter(lastVisible)] : []),
+        startAfter(lastVisible || 0),
         limit(ITEMS_PER_PAGE)
       )
     }
 
-    try {
-      const querySnapshot = await getDocs(q)
-      const items = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+    const querySnapshot = await getDocs(q)
+    const items = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
 
-      if (items.length === 0 && direction === 'next') {
-        toast('✅ All photos loaded')
-      }
-
-      if (direction === 'next' && lastVisible) {
-        setPageStack([...pageStack, lastVisible])
-      }
-
-      setMediaItems(items)
-      setFirstVisible(items[0])
-      setLastVisible(querySnapshot.docs[querySnapshot.docs.length - 1])
-    } catch (err) {
-      console.error('Fetch error:', err)
-      toast.error('Failed to load media')
-    } finally {
-      setLoading(false)
+    if (items.length === 0 && direction === 'next') {
+      toast('✅ All photos loaded')
     }
+
+    if (direction === 'next' && lastVisible) {
+      setPageStack([...pageStack, lastVisible])
+    }
+
+    setMediaItems(items)
+    setLastVisible(querySnapshot.docs[querySnapshot.docs.length - 1])
+    setLoading(false)
   }
 
   return (
-    <section className="min-h-screen bg-black text-white relative px-4">
+    <section className="min-h-screen bg-white text-black dark:bg-[#0c0c0f] dark:text-white relative px-4">
       <Toaster position="bottom-center" toastOptions={{ style: { background: '#333', color: '#fff' } }} />
 
-      <h2 className="text-center text-2xl font-bold mt-8">Photo/Vids</h2>
+      <h2 className="text-center text-2xl font-bold mt-8">📸 Photo/Vids</h2>
 
       {loading ? (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-6 animate-pulse">
-          {[...Array(ITEMS_PER_PAGE)].map((_, i) => (
-            <div key={i} className="w-full h-48 bg-zinc-700 rounded" />
-          ))}
-        </div>
+        <p className="text-center mt-4">Loading media...</p>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 py-6">
           {mediaItems.map((item) => (

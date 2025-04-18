@@ -46,7 +46,7 @@ const Splash = () => {
 
   return (
     <div
-      className="relative min-h-screen bg-black flex flex-col items-center justify-center"
+      className="relative min-h-screen bg-[#0c0c0f] flex flex-col items-center justify-center"
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
     >

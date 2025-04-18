@@ -1,0 +1,56 @@
+@tailwind components;
+
+@layer components {
+  /* === CUSTOM UTILITY CLASSES FOR THE PILOT SHOW === */
+
+  /* Sections */
+  .section {
+    @apply max-w-6xl mx-auto px-6 md:px-10 py-16;
+  }
+  .section-title {
+    @apply font-heading text-4xl tracking-wide leading-snug text-foreground mb-6;
+  }
+  .section-subtext {
+    @apply font-body text-base text-muted leading-relaxed mb-8;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-block font-heading text-lg px-6 py-3 rounded-full bg-primary text-background tracking-wide hover:opacity-90 transition;
+  }
+  .btn-ghost {
+    @apply inline-block font-body px-4 py-2 border border-muted rounded-full text-foreground hover:bg-muted/20 transition;
+  }
+  .btn-disabled {
+    @apply opacity-50 cursor-not-allowed pointer-events-none;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-background border border-muted rounded-2xl p-6 shadow-sm transition hover:shadow-md;
+  }
+  .card-title {
+    @apply font-heading text-xl mb-2 text-foreground;
+  }
+  .card-body {
+    @apply font-body text-base text-muted;
+  }
+
+  /* Chips / Tags */
+  .badge {
+    @apply inline-block bg-muted text-foreground px-3 py-1 text-sm rounded-full uppercase tracking-wide;
+  }
+
+  /* Flex helpers */
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+
+  /* Responsive Grid */
+  .grid-auto {
+    @apply grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+  }
+}
