@@ -65,7 +65,7 @@ const Photos = () => {
     <section className="min-h-screen bg-white text-black dark:bg-[#0c0c0f] dark:text-white relative px-4">
       <Toaster position="bottom-center" toastOptions={{ style: { background: '#333', color: '#fff' } }} />
 
-      <h2 className="text-center text-2xl font-bold mt-8">📸 Photo/Vids</h2>
+      <h2 className="text-center text-2xl font-bold mt-8">Photo/Vids</h2>
 
       {loading ? (
         <p className="text-center mt-4">Loading media...</p>

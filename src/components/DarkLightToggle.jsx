@@ -1,4 +1,3 @@
-// src/components/DarkLightToggle.jsx
 import { useEffect, useState, createContext, useContext } from 'react'
 
 // Create Context
@@ -28,19 +27,24 @@ export const DarkModeProvider = ({ children }) => {
   )
 }
 
-// Hook to use in components
+// Hook to use the dark mode context
 export const useDarkMode = () => useContext(DarkModeContext)
 
-// Toggle Component
+// Toggle Button Component
 const DarkLightToggle = () => {
   const { isDarkMode, setIsDarkMode } = useDarkMode()
 
   return (
     <button
       onClick={() => setIsDarkMode(!isDarkMode)}
-      className="px-3 py-1 border rounded text-sm font-semibold bg-white text-black dark:bg-black dark:text-white shadow-sm"
+      className={`relative w-14 h-8 flex items-center rounded-full p-1 transition-colors duration-300 
+        ${isDarkMode ? 'bg-indigo-600' : 'bg-yellow-300'}`}
     >
-      {isDarkMode ? '☀ Light Mode' : '🌙 Dark Mode'}
+      <span
+        className={`absolute left-1 transition-transform duration-300 transform rounded-full w-6 h-6 bg-white shadow-md
+          ${isDarkMode ? 'translate-x-6' : 'translate-x-0'}`}
+      ></span>
+      <span className="sr-only">Toggle Dark Mode</span>
     </button>
   )
 }
