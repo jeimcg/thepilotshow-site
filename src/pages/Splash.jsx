@@ -54,7 +54,7 @@ const Splash = () => {
   onClick={handleEnter}
   className="enter-button"
 >
-  <h6 className="relative z-10">Enter</h6>
+  <h6 className="relative z-10 text-[#ffffff]">Enter</h6>
   <span className="aura-glow" />
 </button>
 
