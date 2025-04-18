@@ -53,4 +53,22 @@
   .grid-auto {
     @apply grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
   }
+
+  @layer components {
+    .btn-chime {
+        @apply inline-block font-heading text-base px-6 py-3 rounded-full 
+        text-white bg-[#0837F5] shadow-[0_0_8px_rgba(8,55,245,0.4)] 
+        transition duration-300 ease-in-out 
+        hover:bg-[#0a2edc] hover:shadow-[0_0_16px_rgba(8,55,245,0.6)] 
+        active:scale-[0.97] 
+        tracking-wide;
+    }
+  }
 }
+
+@layer components {
+    .filter-blue {
+      filter: brightness(0) saturate(100%) invert(17%) sepia(97%) saturate(4081%) hue-rotate(221deg) brightness(97%) contrast(108%);
+    }
+  }
+

@@ -25,7 +25,7 @@ const Header = () => {
         <span id="plane-flyby" className="plane-flyby text-2xl">✈️</span>
 
         {/* Static title */}
-        <h1 className="text-4xl font-bold text-blue-500 dark:text-[#0837F5] tracking-tight mb-2 z-10 relative">
+        <h1 className="text-4xl font-bold spacing text-blue-500 dark:text-[#0837F5] tracking-tight mb-2 z-10 relative">
           The Pilot <span className="inline-block">✈️how</span>
         </h1>
       </div>

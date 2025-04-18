@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import dakotaSig from '../assets/dakotas-sig.svg'
+import dakotaSig from '../assets/dakota-sigv2.svg'
 
 export default function SignatureQuote() {
   const [visible, setVisible] = useState(false)
@@ -15,13 +15,13 @@ export default function SignatureQuote() {
         visible ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      <p className="text-sm text-[#0837F5] mb-2 leading-snug">
+      <p className="text-sm mb-2 leading-snug">
         “Everyday is Pilot Season.”
       </p>
       <img
         src={dakotaSig}
         alt="Dakota's signature"
-        className="h-24 opacity-70 ml-24"
+        className="filter-blue h-24 opacity-70 ml-24"
       />
     </div>
   )

@@ -19,7 +19,7 @@ const Photos = () => {
   const fetchPage = async (direction = 'next') => {
     setLoading(true)
     let q
-
+  
     if (direction === 'prev') {
       const prevStack = [...pageStack]
       const popped = prevStack.pop()
@@ -31,30 +31,36 @@ const Photos = () => {
         startAfter(popped)
       )
     } else {
-      q = query(
-        collection(db, 'photos'),
-        orderBy('timestamp', 'desc'),
-        startAfter(lastVisible || 0),
-        limit(ITEMS_PER_PAGE)
-      )
+      q = lastVisible
+        ? query(
+            collection(db, 'photos'),
+            orderBy('timestamp', 'desc'),
+            startAfter(lastVisible),
+            limit(ITEMS_PER_PAGE)
+          )
+        : query(
+            collection(db, 'photos'),
+            orderBy('timestamp', 'desc'),
+            limit(ITEMS_PER_PAGE)
+          )
     }
-
+  
     const querySnapshot = await getDocs(q)
     const items = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-
+  
     if (items.length === 0 && direction === 'next') {
       toast('✅ All photos loaded')
     }
-
+  
     if (direction === 'next' && lastVisible) {
       setPageStack([...pageStack, lastVisible])
     }
-
+  
     setMediaItems(items)
     setLastVisible(querySnapshot.docs[querySnapshot.docs.length - 1])
     setLoading(false)
   }
-
+  
   return (
     <section className="min-h-screen bg-white text-black dark:bg-[#0c0c0f] dark:text-white relative px-4">
       <Toaster position="bottom-center" toastOptions={{ style: { background: '#333', color: '#fff' } }} />

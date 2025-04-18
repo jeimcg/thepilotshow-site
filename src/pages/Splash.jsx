@@ -54,19 +54,20 @@ const Splash = () => {
         onClick={handleEnter}
         className="text-lg tracking-widest uppercase text-[#0837F5] border-2 border-white bg-transparent px-8 py-4 rounded-lg transition-all duration-300 hover:bg-white/10 hover:shadow-[0_0_15px_2px_white] hover:brightness-75"
       >
-        Enter
+        <h6>Enter</h6>
       </button>
 
-      {/* 👇 Flight log shown below the button */}
+      {/* ✨ Flight count with looping sheen only while hovering */}
       {clickCount !== null && (
-        <p
-          className={`mt-4 text-sm text-white transition-opacity duration-800 ${
-            hovering ? 'opacity-100' : 'opacity-5'
-          }`}
-        >
-          Flights Logged: {clickCount}
-        </p>
-      )}
+  <p
+    className={`mt-4 text-sm text-white relative overflow-hidden transition-opacity duration-800 ${
+      hovering ? 'opacity-100' : 'opacity-0'
+    }`}
+  >
+    Flights Logged: {clickCount}
+    <span className={`${hovering ? 'sheen-effect' : ''}`} />
+  </p>
+)}
 
       <SignatureQuote />
     </div>
