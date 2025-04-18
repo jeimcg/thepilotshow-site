@@ -68,3 +68,38 @@ small {
 .filter-blue {
   filter: invert(13%) sepia(93%) saturate(4164%) hue-rotate(232deg) brightness(106%) contrast(113%);
 }
+
+@layer components {
+  .enter-button {
+    @apply relative text-lg tracking-widest uppercase border-2 bg-transparent px-8 py-4 rounded-lg 
+      transition-all duration-300 shadow-md overflow-hidden 
+      border-white text-[#0837F5] dark:text-white hover:brightness-75;
+  }
+
+  .enter-button:hover {
+    @apply bg-white/10 shadow-[0_0_25px_4px_rgba(255,255,255,0.2)];
+  }
+
+  .aura-glow {
+    @apply absolute inset-0 rounded-lg pointer-events-none;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    animation: aura-pulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes aura-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1.3);
+      opacity: 0.3;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+  }
+}
+
+

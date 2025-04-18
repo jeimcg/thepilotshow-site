@@ -10,7 +10,7 @@ const AboutMe = () => {
         <img
           src="/pilotboyd.jpeg"
           alt="Creator portrait"
-          className="w-36 h-36 rounded-full object-cover mb-6 border border-white shadow-lg"
+          className="w-40 h-40 rounded-full object-cover mb-6 border border-white shadow-lg"
         />
 
         <p className="max-w-xl mb-10 leading-relaxed text-base text-zinc-700 dark:text-zinc-400">

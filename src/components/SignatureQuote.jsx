@@ -15,7 +15,7 @@ export default function SignatureQuote() {
         visible ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      <p className="text-sm mb-2 leading-snug">
+      <p className="text-sm mb-2 leading-snug text-[#0837F5]">
         “Everyday is Pilot Season.”
       </p>
       <img
