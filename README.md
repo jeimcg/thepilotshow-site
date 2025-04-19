@@ -73,5 +73,5 @@ This site is themed around flight, mystery, and momentum — blending bold visua
 5. **Deploy to Netlify**
    Just connect your GitHub repo, set the build command to npm run build, and publish the /dist folder.
 
-   <img src="public/pilotshow1.png" alt="Pilot Show screenshot" width="600"/>
-   <img src="public/pilotshow2.png" alt="Pilot Show screenshot" width="600"/>
+   <img src="public/screenshots/pilotshow1.png" alt="Pilot Show screenshot" width="600"/>
+   <img src="public/screenshots/pilotshow2.png" alt="Pilot Show screenshot" width="600"/>
