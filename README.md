@@ -1,62 +1,64 @@
-# The Pilot Show — Portfolio Website
+# ✈️ The Pilot Show — Portfolio Project
 
-**Live Demo:** [https://thepilotshow-site.netlify.app/](https://thepilotshow-site.netlify.app/)  (i actually changed the link for now hehe srry, i can give priv link for viewing if needed!)
+**Live Site:** [pilotszn.netlify.app](https://pilotszn.netlify.app)
 
-**Tech Stack:** React + Tailwind CSS + Vite + Stripe + Netlify
-
----
-
-## Overview
-
-_The Pilot Show_ is a sleek, mobile-first portfolio website created for a multi-talented creative client. It acts as a central hub to showcase music, visual content, external platforms, and brand identity — all within a responsive, minimal, and animated interface.
+A cinematic, mobile-first portfolio built for an artist known as *PilotBoyD*.  
+This site is themed around flight, mystery, and momentum — blending bold visuals with smooth UX, Firebase integration, and animated interactions.
 
 ---
 
-## Features
+## 🌟 Features
 
-### Splash Landing Animation
-- Interactive “Enter” button with audio feedback
-- Plane animation fly-through effect
-- Animation only plays once per session
+### 🎨 Theming & UI
+- **Dark/Light Mode Toggle** (persistent via localStorage)
+- **Animated flyby plane** that loops across the screen
+- **Signature aura buttons** with radial pulse effects
+- **Responsive layout** across devices
+- **Typography pairing:** Bebas Neue for headings, Open Sans for body
 
-### Mobile-Optimized Navigation
-- Bottom nav bar built with `react-router-dom`
-- Smooth page transitions
-- Icons powered by Lucide
+### 🔁 Animations
+- Plane loop powered by pure CSS (`@keyframes flyLoop`)
+- Hover effects, button transitions, and page fade-ins
+- Custom utility classes via Tailwind layers
 
-### Runway-Inspired Home Page
-- Animated runway stripe with glowing dashes and threshold bars
-- Plane fly-through synced with branding
-- Stripe donation button to support the creator
+### 🔐 CMS Integration
+- **Firebase Firestore** used for managing photo and video content
+- **Firebase Auth** allows secure login to a custom media dashboard
+- **Toast notifications**, pagination, and caching for smoother UX
 
-### Music Page with Embedded Players
-- Responsive music grid
-- Supports both songs and playlists
-- SoundCloud embeds allow users to listen in-page
-
-### Photo Gallery
-- Expanding image grid built for portfolios
-- Responsive layout with Tailwind utility classes
-
-### About Me
-- Personal bio section
-- Embedded signature graphic
-- Footer credit for developer
+### 📸 Dynamic Content
+- Upload + display photos and videos
+- Modal preview on click
+- Tag-based filtering for future expansion
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
-| Tool         | Purpose                              |
-|--------------|---------------------------------------|
-| React        | Frontend framework                    |
-| Tailwind CSS | Styling via utility classes           |
-| Vite         | Fast dev server & optimized builds    |
-| Stripe       | Donation support via checkout session |
-| Netlify      | CI/CD + hosting                       |
-| React Router | Routing between pages                 |
+- **Frontend:** React + Vite
+- **Styling:** Tailwind CSS, custom utility layers
+- **State:** React hooks + localStorage
+- **Backend / CMS:** Firebase Firestore + Auth
+- **Deployment:** Netlify
 
 ---
 
-## Project Structure
+## 📂 File Highlights
 
+| File / Folder         | Purpose                                   |
+|----------------------|-------------------------------------------|
+| `/src/components/`   | Reusable UI components (Header, Toggle, etc.) |
+| `DarkLightToggle.jsx`| Full context + animated dark/light switch |
+| `plane.css`           | Looping flyby animation for the plane ✈️ |
+| `utilities.css`       | Custom Tailwind-based utility classes     |
+| `Photos.jsx`          | Paginated media gallery with Firestore    |
+| `firebase.js`         | Firebase config + Firestore instance      |
+
+---
+
+## 🚀 Setup Instructions
+
+1. **Clone repo:**
+   ```bash
+   git clone https://github.com/jeimcg/thepilotshow-site.git
+   cd thepilotshow-site
