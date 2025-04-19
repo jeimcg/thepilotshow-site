@@ -62,3 +62,16 @@ This site is themed around flight, mystery, and momentum — blending bold visua
    ```bash
    git clone https://github.com/jeimcg/thepilotshow-site.git
    cd thepilotshow-site
+2. **Install dependencies:**
+   ```bash
+   npm install
+3. **Connect Firebase**
+   Create a .env or configure your firebase.js with your project keys
+4. **Run the dev server**
+   ```bash
+   npm run dev
+5. **Deploy to Netlify**
+   Just connect your GitHub repo, set the build command to npm run build, and publish the /dist folder.
+
+   <img src="public/pilotshow1.png" alt="Pilot Show screenshot" width="600"/>
+   <img src="public/pilotshow2.png" alt="Pilot Show screenshot" width="600"/>
