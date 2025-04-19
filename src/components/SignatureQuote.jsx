@@ -15,13 +15,13 @@ export default function SignatureQuote() {
         visible ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      <p className="text-sm mb-2 leading-snug text-[#0837F5]">
+      <p className="text-sm mb-2 leading-snug text-[#ffffff]">
         “Everyday is Pilot Season.”
       </p>
       <img
         src={dakotaSig}
         alt="Dakota's signature"
-        className="filter-blue h-24 opacity-70 ml-24"
+        className="invert h-24 opacity-70 ml-24"
       />
     </div>
   )
