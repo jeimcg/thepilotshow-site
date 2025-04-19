@@ -1,6 +1,7 @@
 # The Pilot Show — Portfolio Website
 
-**Live Demo:** [https://thepilotshow-site.netlify.app/](https://thepilotshow-site.netlify.app/)  i actually changed the link for now hehe srry
+**Live Demo:** [https://thepilotshow-site.netlify.app/](https://thepilotshow-site.netlify.app/)  (i actually changed the link for now hehe srry, i can give priv link for viewing if needed!)
+
 **Tech Stack:** React + Tailwind CSS + Vite + Stripe + Netlify
 
 ---
