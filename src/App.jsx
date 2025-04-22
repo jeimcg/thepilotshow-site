@@ -13,10 +13,12 @@ import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 
+
 // Components
 import NavbarMain from './components/NavbarMain'
 import DarkLightToggle from './components/DarkLightToggle'
 import ScrollToTop from './components/ScrollToTop'
+
 
 function App() {
   const { isDarkMode } = useDarkMode()

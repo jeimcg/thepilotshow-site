@@ -5,7 +5,7 @@ import PageWrapper from '../components/PageWrapper'
 
 const Home = () => {
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center text-center pb-50 overflow-hidden bg-white text-black dark:bg-[#0c0c0f] dark:text-white transition-colors duration-300">
+    <section className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center text-center pb-32 overflow-hidden bg-white text-black dark:bg-[#0c0c0f] dark:text-white transition-colors duration-300">
       <PageWrapper>
         {/* Plane animation */}
         <div id="logo-container" className="absolute top-[30%] left-0 w-full h-[70px] z-50 pointer-events-none">
@@ -16,8 +16,8 @@ const Home = () => {
           />
         </div>
 
-        {/* === Video Above Logo === */}
-        <div className="mt-10 w-full max-w-md aspect-w-16 aspect-h-9 overflow-hidden rounded-lg shadow-lg">
+        {/* === Responsive Video Above Title === */}
+        <div className="mt-8 sm:mt-10 mx-auto w-full max-w-[90vw] sm:max-w-md aspect-w-14 aspect-h-9 overflow-hidden rounded-lg shadow-lg">
           <video
             src="/RenderedVideo.MOV"
             className="w-full h-full object-cover object-[0_100%]"
@@ -31,8 +31,8 @@ const Home = () => {
         {/* === Logo & Title === */}
         <Header />
 
-        {/* === Photo Below Logo === */}
-        <div className="mt-6 ml-7 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg rounded-lg overflow-hidden shadow-md">
+        {/* === Responsive Image Below Title === */}
+        <div className="mt-6 sm:mt-8 mx-auto w-full max-w-[90vw] sm:max-w-lg rounded-lg overflow-hidden shadow-md">
           <img
             src="/RenderedImage.JPEG"
             alt="PilotBoyD suited up"
@@ -40,9 +40,9 @@ const Home = () => {
           />
         </div>
 
-        {/* Main Call to Action */}
-        <div className="mt-16 px-6">
-          <p className="strong text-zinc-700 dark:text-zinc-400 text-base max-w-md mb-10">
+        {/* === Call to Action === */}
+        <div className="mt-12 sm:mt-16 px-4">
+          <p className="max-w-sm sm:max-w-md mx-auto text-base sm:text-lg text-zinc-700 dark:text-zinc-400 mb-8 sm:mb-10">
             Support The Pilot.
           </p>
 

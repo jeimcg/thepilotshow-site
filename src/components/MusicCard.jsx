@@ -12,7 +12,7 @@ const MusicCard = ({ title, cover, link, platform, description }) => {
       />
 
       {/* Title + Description */}
-      <h3 className="text-lg font-bold">{title}</h3>
+      <h3 className="text-lg font-bold text-white">{title}</h3>
       <p className="text-sm text-zinc-400 mb-3">{description}</p>
 
       {/* Link (for all platforms) */}
