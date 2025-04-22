@@ -32,7 +32,7 @@ const EchoTitle = () => {
     return () => observer.disconnect()
   }, [])
 
-  const lines = expanded ? 5 : 1
+  const lines = expanded ? 6 : 1
 
   return (
     <div
