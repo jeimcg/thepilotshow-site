@@ -35,7 +35,7 @@ const Music = () => {
   ]
 
   return (
-    <section className="p-6 bg-white text-black dark:bg-[#0c0c0f] dark:text-white">
+    <section className="p-6 bg-white dark: text-white dark:bg-[#0c0c0f] dark:text-white">
       <h2 className="text-2xl font-bold text-center mb-6">Releases</h2>
 
       <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">

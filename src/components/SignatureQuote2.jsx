@@ -11,7 +11,7 @@ export default function SignatureQuote2() {
 
   return (
     <div
-      className={`absolute bottom-8 right-8 text-left max-w-xs transition-opacity duration-1000 ${
+      className={`mt-4 ml-10 text-center transition-opacity duration-1000 ${
         visible ? 'opacity-100' : 'opacity-0'
       }`}
     >
@@ -21,7 +21,7 @@ export default function SignatureQuote2() {
       <img
         src={dakotaSig}
         alt="Dakota's signature"
-        className="h-24 opacity-70 ml-24"
+        className="h-20 mx-auto opacity-70 float-right mr-6"
       />
     </div>
   )

@@ -16,6 +16,7 @@ import Signup from './pages/Signup'
 // Components
 import NavbarMain from './components/NavbarMain'
 import DarkLightToggle from './components/DarkLightToggle'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const { isDarkMode } = useDarkMode()
@@ -26,11 +27,18 @@ function App() {
   return (
     <div className={`${isDarkMode ? 'dark' : ''}`}>
       <div className="min-h-screen bg-white text-black dark:bg-[#0c0c0f] dark:text-white pb-20 overflow-x-hidden relative">
+      {/* Header with toggle */}
+      <header className="w-full flex justify-between px-4 py-4">
+        <h1 className="text-2xl font-heading tracking-tight text-[#0837F5] dark:text-white">
+          THE PILOT SHOW
+        </h1>
+        <DarkLightToggle />
+      </header>
 
         {/* Toggle button (only on pages besides splash) */}
         {showNavbar && (
-          <div className="fixed top-4 left-4 z-50">
-            <DarkLightToggle />
+          <div className="fixed top-4 right-4 z-50">
+            <ScrollToTop />
           </div>
         )}
 
