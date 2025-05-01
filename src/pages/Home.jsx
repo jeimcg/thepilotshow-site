@@ -5,7 +5,7 @@ import PageWrapper from '../components/PageWrapper'
 
 const Home = () => {
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center text-center pb-32 overflow-hidden bg-white text-black dark:bg-[#0c0c0f] dark:text-white transition-colors duration-300">
+    <section className="relative min-h-screen flex flex-col items-center text-center overflow-hidden bg-white text-black dark:bg-[#0c0c0f] dark:text-white transition-colors duration-300">
       <PageWrapper>
         {/* Plane animation */}
         <div id="logo-container" className="absolute top-[30%] left-0 w-full h-[70px] z-50 pointer-events-none">
@@ -59,8 +59,11 @@ const Home = () => {
 
         <FooterQuote />
       </PageWrapper>
+
+      {/* Padding to prevent content from being hidden under sticky/fixed bars */}
+      <div className="h-[7rem] sm:h-[8rem]" />
     </section>
   )
 }
 
-export default Home;
+export default Home

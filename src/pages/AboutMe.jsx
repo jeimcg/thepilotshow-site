@@ -4,7 +4,7 @@ import PageWrapper from '../components/PageWrapper'
 const AboutMe = () => {
   return (
     <PageWrapper>
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-12 pb-[6.5rem] text-center text-black dark:text-zinc-300">
+      <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-4 pb-[6.5rem] text-center text-black dark:text-zinc-300">
         {/* Title */}
         <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-black dark:text-white">
           About the Creator

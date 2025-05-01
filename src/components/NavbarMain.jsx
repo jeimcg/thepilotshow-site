@@ -8,14 +8,14 @@ const NavbarMain = () => {
   const tabs = [
     { id: 'home', label: 'Home', icon: Home },
     { id: 'links', label: 'Links', icon: Link },
-    { id: 'music', label: 'Music', icon: Library },
-    { id: 'photos', label: 'Photos', icon: ImageIcon },
+    { id: 'music releases', label: 'Music Releases', icon: Library },
+    { id: 'photos + videos', label: 'Photos + Videos', icon: ImageIcon },
     { id: 'aboutme', label: 'About Me', icon: User }, // ← NEW TAB
   ]
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 bg-zinc-900/90 backdrop-blur-sm border-t border-zinc-800 shadow-inner rounded-t-xl">
-      <div className="mx-auto flex justify-around py-3 px-4">
+      <div className="mx-auto flex justify-around py-1 px-4">
         {tabs.map(({ id, label, icon: Icon }) => {
           const isActive = location.pathname === `/${id}`
 

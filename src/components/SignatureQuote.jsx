@@ -11,7 +11,7 @@ export default function SignatureQuote() {
 
   return (
     <div
-      className={`absolute bottom-8 right-8 text-left max-w-xs transition-opacity duration-1000 ${
+      className={`absolute bottom-16 right-8 text-left max-w-xs transition-opacity duration-1000 ${
         visible ? 'opacity-100' : 'opacity-0'
       }`}
     >

@@ -60,14 +60,12 @@ const Splash = () => {
 
       {/* ✨ Flight count with looping sheen only while hovering */}
       {clickCount !== null && (
-  <p
-    className={`mt-4 text-sm text-white relative overflow-hidden transition-opacity duration-800 ${
-      hovering ? 'opacity-100' : 'opacity-0'
-    }`}
+  <h2
+    className={`mt-4 text-sm text-white relative overflow-hidden transition-opacity duration-800`}
   >
     Flights Logged: {clickCount}
-    <span className={`${hovering ? 'sheen-effect' : ''}`} />
-  </p>
+    <span className='sheen-overlay' />
+  </h2>
 )}
 
       <SignatureQuote />

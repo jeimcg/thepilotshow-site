@@ -20,7 +20,7 @@ const EchoTitle = () => {
         cooldownRef.current = true
         setTimeout(() => {
           cooldownRef.current = false
-        }, 1500) // 1.5 second cooldown
+        }, 1000) // 1.0 second cooldown
       },
       { threshold: 0.3 }
     )
