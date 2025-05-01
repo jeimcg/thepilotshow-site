@@ -63,6 +63,14 @@ const Links = () => {
           onClick={() => toggleSection('market')}
         >
           <a
+            href=""
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full bg-[#95BF47] text-white font-medium text-sm uppercase rounded shadow hover:bg-zinc-700 transition px-6 py-3"
+          >
+            Shopify
+          </a>
+          <a
             href="https://offerup.co/W0eOlKggjSb"
             target="_blank"
             rel="noopener noreferrer"
@@ -93,14 +101,6 @@ const Links = () => {
             className="block w-full bg-[#1B1F33] text-white font-medium text-sm uppercase rounded shadow hover:bg-zinc-700 transition px-6 py-3"
           >
             UnBoxed
-          </a>
-          <a
-            href=""
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full bg-[#95BF47] text-white font-medium text-sm uppercase rounded shadow hover:bg-zinc-700 transition px-6 py-3"
-          >
-            Shopify
           </a>
         </AccordionSection>
 

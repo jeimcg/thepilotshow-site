@@ -2,8 +2,7 @@ import SignatureQuote2 from '../components/SignatureQuote2'
 import PageWrapper from '../components/PageWrapper'
 
 const AboutMe = () => {
-  return (
-    <PageWrapper>
+  return (    
       <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-4 pb-[6.5rem] text-center text-black dark:text-zinc-300">
         {/* Title */}
         <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-black dark:text-white">
@@ -23,11 +22,9 @@ const AboutMe = () => {
           <br />
           <span className="text-[#0837F5] font-semibold">#pi✈️otseason</span>
         </p>
-
         {/* Signature */}
         <SignatureQuote2 />
       </section>
-    </PageWrapper>
   )
 }
 

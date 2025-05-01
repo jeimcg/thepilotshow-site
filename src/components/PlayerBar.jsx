@@ -70,11 +70,17 @@ const PlayerBar = () => {
   if (!currentTrack) return null
 
   return (
-    <div className="fixed bottom-16 left-0 right-0 bg-zinc-900 text-white z-50 shadow-xl rounded-t-lg px-4 py-3 sm:rounded-none sm:shadow-none">
+    <div className={`fixed left-0 right-0 z-50 transition-all duration-300 ease-in-out
+      ${expanded ? 'bottom-16 py-3 px-4 bg-zinc-900 shadow-xl' : 'bottom-16 py-2 px-3 bg-zinc-800/80 shadow-sm'}
+      text-white rounded-t-lg sm:rounded-none sm:shadow-none`}
+    >
       {/* Collapse toggle (mobile only) */}
-      <div className="flex justify-end sm:hidden mb-2">
-        <button onClick={() => setExpanded(!expanded)} className="text-white">
-          {expanded ? <ChevronDown size={18} /> : <ChevronUp size={18} />}
+      <div className="flex justify-end sm:hidden mb-1">
+        <button onClick={() => setExpanded(!expanded)} className="text-white transition-transform duration-300">
+          <ChevronDown
+            size={18}
+            className={`transform transition-transform duration-300 ${expanded ? 'rotate-0' : 'rotate-180'}`}
+          />
         </button>
       </div>
 
@@ -84,8 +90,7 @@ const PlayerBar = () => {
           <div className="mb-10 flex items-center justify-between">
             <div className="flex flex-col">
               <span className="text-sm font-semibold truncate">{currentTrack.title}</span>
-              <span className="text-xs
-              text-zinc-400">{currentTrack.artist || 'Now Playing'}</span>
+              <span className="text-xs text-zinc-400">{currentTrack.artist || 'Now Playing'}</span>
               {trackQueue.length > 0 && (
                 <div className="text-xs mt-2 text-zinc-400">
                   <strong>Up Next:</strong> {trackQueue[0]?.title}
@@ -116,7 +121,9 @@ const PlayerBar = () => {
           </div>
         </>
       ) : (
-        <div className="text-sm text-center mb-10 text-zinc-300">Now Playing: {currentTrack.title}</div>
+        <div className="text-xs text-center text-zinc-300 truncate">
+          🎶 {currentTrack.title}
+        </div>
       )}
 
       {/* Hidden SoundCloud Iframe */}

@@ -13,11 +13,11 @@ const MusicCard = ({ title, cover, link, platform, description }) => {
       <img
         src={cover}
         alt={`${title} cover`}
-        className="w-full h-64 object-cover rounded-lg mb-4 shadow-md"
+        className="max-w-full max-h-full object-cover rounded-lg mb-4 shadow-md"
       />
 
       {/* Title */}
-      <h3 className="text-lg font-bold leading-snug line-clamp-2">{title}</h3>
+      <h3 className="text-lg font-bold leading-snug line-clamp-2 text-white">{title}</h3>
 
       {/* Optional Description */}
       {description && (
