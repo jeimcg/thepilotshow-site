@@ -21,7 +21,7 @@ export default function SignatureQuote2() {
       <img
         src={dakotaSig}
         alt="Dakota's signature"
-        className="h-20 mx-auto opacity-70 float-right mr-6"
+        className="text-[#0837F5] h-20 mx-auto opacity-70 float-right mr-6"
       />
     </div>
   )
