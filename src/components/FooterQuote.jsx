@@ -1,4 +1,4 @@
-import dakotaSig from '../assets/dakota-sigv2.svg'
+import dakotaSig from '../assets/pilotboydsig.svg'
 
 export default function FooterQuote() {
   return (
