@@ -17,10 +17,10 @@ const AboutMe = () => {
         />
 
         {/* Paragraph */}
-        <p className="max-w-xl text-base sm:text-lg leading-relaxed text-zinc-700 dark:text-zinc-400 mb-10">
-          Welcome to the PilotShow where it’s always <span className="text-[#0837F5] font-semibold">#pi✈️otseason</span>. I started this website as a place for all the love I’ve done and seen to be in one location. From YouTube to making purchases, everything has become one click away. Remember — “You gotta get to it, instead of going thru it” — it’s a way of life. So from me, PilotBoyD: salute and enjoy. 
+        <p className="max-w-xl text-base sm:text-lg leading-relaxed mb-10">
+          Welcome to the PilotShow where it’s always <span className="text-[#0837F5] font-semibold">#Pi✈️otseason</span>. I started this website as a place for all the love I’ve done and seen to be in one location. From YouTube to making purchases, everything has become one click away. Remember — “You gotta get to it, instead of going thru it” — It’s a way of life. So from me, PilotBoyD: Salute and Enjoy. 
           <br />
-          <span className="text-[#0837F5] font-semibold">#pi✈️otseason</span>
+          <span className="text-[#0837F5] font-semibold">#Pi✈️otseason</span>
         </p>
         {/* Signature */}
         <SignatureQuote2 />

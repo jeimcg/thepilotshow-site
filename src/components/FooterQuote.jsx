@@ -1,4 +1,4 @@
-import dakotaSig from '../assets/pilotboydsig.svg'
+import dakotaSig from '../assets/pilotboydsigv2.svg'
 
 export default function FooterQuote() {
   return (
@@ -13,7 +13,7 @@ export default function FooterQuote() {
         <img
           src={dakotaSig}
           alt="Dakota's signature"
-          className="h-14 opacity-70 dark:invert"
+          className="h-14 opacity-70"
         />
       </div>
 

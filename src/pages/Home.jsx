@@ -1,5 +1,4 @@
 import Header from '../components/Header'
-import RunwayStripe from '../components/RunwayStripe'
 import FooterQuote from '../components/FooterQuote'
 import PageWrapper from '../components/PageWrapper'
 
@@ -19,7 +18,7 @@ const Home = () => {
         {/* === Responsive Video Above Title === */}
         <div className="mt-8 sm:mt-10 mx-auto w-full max-w-[90vw] sm:max-w-md aspect-w-14 aspect-h-9 overflow-hidden rounded-lg shadow-lg">
           <video
-            src="/RenderedVideo.MOV"
+            src="/RenderedVideov3.mov"
             className="w-full h-full object-cover object-[0_100%]"
             autoPlay
             muted
@@ -42,18 +41,16 @@ const Home = () => {
 
         {/* === Call to Action === */}
         <div className="mt-12 sm:mt-16 px-4">
-          <p className="max-w-sm sm:max-w-md mx-auto text-base sm:text-lg text-zinc-700 dark:text-zinc-400 mb-8 sm:mb-10">
-            Support The Pilot.
-          </p>
+      
 
           <button
             onClick={() => {
               navigator.clipboard.writeText('@pilotboyd')
               alert('Chime handle copied! Paste it into your app to donate.')
             }}
-            className="btn-chime"
+            className="btn-chime mt-4"
           >
-            Give Love with Chime
+            Give Love with $Chime
           </button>
         </div>
 
@@ -66,4 +63,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;

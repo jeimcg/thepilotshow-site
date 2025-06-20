@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import dakotaSig from '../assets/pilotboydsig.svg'
+import dakotaSig from '../assets/pilotboydsigv2copy.svg'
 
 export default function SignatureQuote() {
   const [visible, setVisible] = useState(false)
@@ -11,7 +11,7 @@ export default function SignatureQuote() {
 
   return (
     <div
-      className={`absolute bottom-16 right-8 text-left max-w-xs transition-opacity duration-1000 ${
+      className={`fill-white absolute bottom-16 right-8 text-left max-w-xs transition-opacity duration-1000  ${
         visible ? 'opacity-100' : 'opacity-0'
       }`}
     >
@@ -21,7 +21,7 @@ export default function SignatureQuote() {
       <img
         src={dakotaSig}
         alt="Dakota's signature"
-        className="invert h-24 opacity-70 ml-24"
+        className="h-24 opacity-70 ml-24"
       />
     </div>
   )

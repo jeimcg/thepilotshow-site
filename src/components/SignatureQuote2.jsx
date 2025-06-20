@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import dakotaSig from '../assets/pilotboydsig.svg'
+import dakotaSig from '../assets/pilotboydsigv2.svg'
 
 export default function SignatureQuote2() {
   const [visible, setVisible] = useState(false)
@@ -11,11 +11,11 @@ export default function SignatureQuote2() {
 
   return (
     <div
-      className={`mt-4 ml-10 text-center transition-opacity duration-1000 ${
+      className={`mt-4 ml text-center transition-opacity duration-1000 ${
         visible ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      <p className="text-sm text-[#0837F5] mb-2 leading-snug">
+      <p className="text-sm mb-2 leading-snug">
         "The Love Is Where the Light Is.”
       </p>
       <img
