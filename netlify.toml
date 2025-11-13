@@ -1,3 +1,14 @@
 [build]
-  command = "npm run build"
+  command = "npm ci && npm run build"
   publish = "dist"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), usb=()"
+    Content-Security-Policy = "default-src 'self'; img-src 'self' https: data:; script-src 'self' https://*.soundcloud.com; style-src 'self' 'unsafe-inline'; frame-src https://w.soundcloud.com;"
