@@ -75,3 +75,6 @@ This site is themed around flight, mystery, and momentum — blending bold visua
 
    <img src="public/screenshots/pilotshow1.png" alt="Pilot Show screenshot" width="600"/>
    <img src="public/screenshots/pilotshow2.png" alt="Pilot Show screenshot" width="600"/>
+
+
+   this is def ai generated summary but i will come back thru and make more human as project advances :)
